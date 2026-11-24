@@ -1,0 +1,11 @@
+{
+    "name": "Niangahmed821.HackatonPackagePluginMln.Tests",
+    "references": [
+        "Niangahmed821.HackatonPackagePluginMln"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": []
+}

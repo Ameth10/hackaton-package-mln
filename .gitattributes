@@ -1,0 +1,13 @@
+# Normalise les fins de ligne (évite les faux changements Windows / Mac / Linux)
+* text=auto
+
+# Fichiers binaires : Git ne doit jamais les modifier ni essayer de les fusionner
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.psd  binary
+*.tga  binary
+*.wav  binary
+*.mp3  binary
+*.ogg  binary
+*.fbx  binary

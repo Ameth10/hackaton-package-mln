@@ -1,0 +1,10 @@
+{
+    "name": "Niangahmed821.HackatonPackagePluginMln.Editor",
+    "references": [
+      "Niangahmed821.HackatonPackagePluginMln"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": []
+}

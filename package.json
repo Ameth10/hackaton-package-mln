@@ -12,12 +12,12 @@
 	"changelogUrl": "https://github.com/Ameth10/hackaton-package-mln/blob/main/com.niangahmed821.hackatonpackagepluginmln/CHANGELOG.md",
 	"license": "MIT",
 	"licensesUrl": "https://github.com/Ameth10/hackaton-package-mln/blob/main/com.niangahmed821.hackatonpackagepluginmln/LICENSE.md",
-	"hideInEditor": false,
+		"hideInEditor": false,
 	"samples": [
 		{
-			"displayName": "Example Sample",
+			"displayName": "Demo",
 			"description": "Scène de démonstration des feedbacks.",
-			"path": "Samples~/Example"
+			"path": "Samples~/Demo"
 		}
 	]
 }

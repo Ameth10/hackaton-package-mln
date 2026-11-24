@@ -1,22 +1,119 @@
-# Hackaton Package MLN
+# MLN Feedbacks
 
-Package Unity (UPM) de feedbacks : highlight de transforms, animation de matériaux, combinaison VFX et son.
+**Un package Unity pour ajouter facilement des effets de « feedback » à un jeu** : un objet qui rebondit quand on le touche, qui clignote quand il prend un coup, une explosion avec son bruitage…
 
-## Installation
+> **État : en développement (version 0.3.0).** La structure du package est en place. Les feedbacks arrivent dans les prochaines versions.
 
-Dans Unity : **Window > Package Manager > + > Install package from git URL**, puis colle :
+<!-- Aperçu : ajouter ici un GIF de démonstration, par exemple ![Aperçu](Docs/images/apercu.gif) -->
 
-```
-https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln
-```
+## Sommaire
 
-La scène de démonstration est optionnelle : une fois le package installé, sélectionne-le dans le Package Manager, ouvre l'onglet **Samples** et clique sur **Import**.
+1. [C'est quoi ?](#cest-quoi-)
+2. [Voir la démo](#voir-la-démo)
+3. [Installer dans Unity](#installer-dans-unity)
+4. [Changer de version](#changer-de-version)
+5. [Organisation du dépôt](#organisation-du-dépôt)
+6. [Pour les développeurs](#pour-les-développeurs)
+7. [Licence](#licence)
 
-## Structure du dépôt
+## C'est quoi ?
 
-| Dossier | Contenu |
+Un **feedback**, c'est la réaction visuelle ou sonore d'un jeu quand il se passe quelque chose : un coup reçu, un objet ramassé, un bouton cliqué. C'est ce qui rend un jeu agréable à jouer.
+
+MLN Feedbacks propose trois familles d'effets :
+
+| Famille | Exemples |
 |---|---|
-| `HackatonPackage/` | Projet Unity de travail, qui utilise le package en local |
-| `com.niangahmed821.hackatonpackagepluginmln/` | Le package UPM (code, sample, documentation) |
+| **Transforms** | L'objet grossit puis revient (punch), tremble (shake), rebondit |
+| **Matériaux** | Flash blanc, changement de couleur, lueur |
+| **VFX + son** | Particules et son déclenchés en même temps |
 
-Pour travailler sur le package, ouvre le dossier `HackatonPackage/` dans Unity Hub.
+Les effets se règlent dans l'Inspector de Unity et se déclenchent en une ligne de code.
+
+## Voir la démo
+
+Les démos jouables (`.exe` pour Windows) et les vidéos sont publiées dans la page **[Releases](https://github.com/Ameth10/hackaton-package-mln/releases)** du dépôt, une par version.
+
+*Pas encore disponible.*
+
+## Installer dans Unity
+
+**Il faut :** Unity 6 (6000.0) ou une version plus récente.
+
+1. Dans Unity, ouvre **Window > Package Manager**.
+2. Clique sur le bouton **+** en haut à gauche, puis sur **Install package from git URL**.
+3. Colle cette adresse, puis clique sur **Install** :
+
+   ```
+   https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln
+   ```
+
+4. Le package **MLN Feedbacks** apparaît dans la liste : c'est installé.
+
+**Scène de démonstration (optionnelle) :** dans le Package Manager, sélectionne **MLN Feedbacks**, ouvre l'onglet **Samples** et clique sur **Import**.
+
+## Changer de version
+
+Sans rien ajouter, l'adresse ci-dessus installe toujours **la dernière version**.
+
+Pour installer une version précise, ou revenir à une version précédente, ajoute `#` suivi du nom de la version à la fin de l'adresse, puis refais l'étape 3 de l'installation. Unity remplace la version installée, sans rien supprimer.
+
+Exemple pour la version 0.2.0 :
+
+```
+https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln#v0.2.0
+```
+
+| Version | À ajouter à la fin | Nouveautés |
+|---|---|---|
+| 0.3.0 | `#v0.3.0` | Licence open source MIT |
+| 0.2.0 | `#v0.2.0` | Nom « MLN Feedbacks », compatible Unity 6000.0 et plus |
+| 0.1.0 | `#v0.1.0` | Première version : structure du package |
+
+Le détail de chaque version est dans le [CHANGELOG](com.niangahmed821.hackatonpackagepluginmln/CHANGELOG.md).
+
+## Organisation du dépôt
+
+```
+hackaton-package-mln/
+├── README.md          ← cette page
+├── LICENSE.md         ← licence MIT
+├── Docs/
+│   └── images/        ← captures et GIF affichés sur cette page
+├── HackatonPackage/   ← projet Unity qui sert à développer et tester le package
+└── com.niangahmed821.hackatonpackagepluginmln/   ← le package lui-même
+    ├── package.json   ← nom, version et description du package
+    ├── README.md      ← documentation du package
+    ├── CHANGELOG.md   ← historique des versions
+    ├── LICENSE.md     ← licence (livrée avec le package)
+    ├── Runtime/       ← code des feedbacks, utilisé en jeu
+    ├── Editor/        ← code de l'éditeur Unity (Inspector)
+    └── Samples~/      ← scène de démonstration, importable à la demande
+```
+
+**Où mettre quoi :**
+
+| Fichier | Où le mettre |
+|---|---|
+| Captures d'écran, GIF pour cette page | `Docs/images/` |
+| Démo jouable (`.exe`), vidéos | Page **Releases** de GitHub, **pas dans Git** (fichiers trop lourds) |
+| Code des feedbacks | `com.niangahmed821.hackatonpackagepluginmln/Runtime/` |
+
+## Pour les développeurs
+
+**Ouvrir le projet :** dans Unity Hub, fais **Add > Add project from disk** et choisis le dossier **`HackatonPackage/`**. N'ouvre jamais la racine du dépôt : Unity y créerait un nouveau projet vide.
+
+Le projet utilise le package en local : toute modification du package est visible directement dans Unity.
+
+**Publier une nouvelle version :**
+
+1. Change `"version"` dans `com.niangahmed821.hackatonpackagepluginmln/package.json`.
+2. Ajoute une entrée dans le `CHANGELOG.md` du package.
+3. Ajoute une ligne au tableau « Changer de version » de cette page.
+4. Fais le commit, puis le tag : `git tag -a v0.4.0 -m "Version 0.4.0"`.
+5. Pousse les deux : `git push origin main v0.4.0`.
+6. Si besoin, crée une Release sur GitHub et joins-y le `.zip` de la démo.
+
+## Licence
+
+MLN Feedbacks est sous **licence MIT** : tout le monde peut l'utiliser, le modifier et le partager, y compris dans un projet commercial, à condition de garder la mention de l'auteur. Voir [LICENSE.md](LICENSE.md).

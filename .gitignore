@@ -36,6 +36,11 @@ ExportedObj/
 *.VC.db
 
 # --- Fichiers de build ---
+# Les démos jouables (.exe, .zip) se publient dans les Releases GitHub, pas dans Git
+/[Bb]uild/
+/[Bb]uilds/
+*.exe
+*.zip
 *.apk
 *.aab
 *.unitypackage

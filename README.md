@@ -9,7 +9,7 @@ Package Unity de feedbacks : highlight de transforms, animation de matériaux, c
 Dans Unity : **Window > Package Manager > + > Install package from git URL**, puis colle :
 
 ```
-https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln
+https://github.com/Ameth10/hackaton-package-mln.git#upm
 ```
 
 Compatible Unity 6 (6000.0) et versions suivantes.
@@ -31,7 +31,7 @@ Les dossiers terminés par `~` sont ignorés par Unity à l'import : ils ne sont
 
 ## Modifier le package
 
-Le package se développe dans le projet Unity `HackatonPackage/` du [dépôt GitHub](https://github.com/Ameth10/hackaton-package-mln), qui l'utilise en local : toute modification est visible directement dans Unity. Le guide pour publier une nouvelle version est dans le README à la racine du dépôt.
+Le package se développe sur la branche `main` du [dépôt GitHub](https://github.com/Ameth10/hackaton-package-mln), dans le projet Unity `HackatonPackage/` qui l'utilise en local : toute modification est visible directement dans Unity. La branche `upm` est générée automatiquement à partir de `main` : ne la modifie pas à la main. Le guide pour publier une nouvelle version est dans le README de la branche `main`.
 
 ## Licence
 

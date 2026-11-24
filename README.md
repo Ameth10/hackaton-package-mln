@@ -128,7 +128,7 @@ Le projet utilise le package en local : toute modification du package est visibl
 3. Ajoute une ligne au tableau « Changer de version » de cette page.
 4. Fais le commit, puis le tag : `git tag -a v0.4.0 -m "Version 0.4.0"`.
 5. Pousse les deux : `git push origin main v0.4.0`.
-6. C'est tout : GitHub Actions met à jour la branche `upm` et crée le tag `upm/v0.4.0` (onglet **Actions** du dépôt pour vérifier).
+6. C'est tout : GitHub Actions met à jour la branche `upm` et crée le tag `upm/v0.4.0` (onglet **Actions** du dépôt pour vérifier). En cas de souci, relance-le à la main : **Actions > Branche upm > Run workflow**.
 7. Si besoin, crée une Release sur GitHub et joins-y le `.zip` de la démo.
 
 ## Licence

@@ -1,38 +1,50 @@
 # Met à jour automatiquement la branche "upm", qui contient uniquement le package à sa racine.
-# - À chaque push sur main : la branche upm reçoit la dernière version du package.
-# - À chaque tag vX.Y.Z : un tag upm/vX.Y.Z est créé sur la branche upm (pour installer une version précise).
+# À chaque push sur main :
+#   1. la branche upm reçoit la dernière version du package ;
+#   2. pour chaque tag vX.Y.Z, le tag upm/vX.Y.Z est créé s'il manque (pour installer une version précise).
+# Relance manuelle possible : onglet Actions > Branche upm > Run workflow.
 name: Branche upm
 
 on:
   push:
     branches: [main]
-    tags: ['v*']
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+env:
+  PKG: com.niangahmed821.hackatonpackagepluginmln
 
 jobs:
   upm:
     runs-on: ubuntu-latest
     steps:
-      - name: Récupérer le dépôt (avec tout l'historique)
+      - name: Récupérer le dépôt (avec tout l'historique et les tags)
         uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
-      - name: Extraire le dossier du package
+      - name: Préparer Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          SPLIT=$(git subtree split --prefix=com.niangahmed821.hackatonpackagepluginmln HEAD)
-          echo "SPLIT=$SPLIT" >> "$GITHUB_ENV"
+          git fetch --tags --force
 
       - name: Mettre à jour la branche upm
-        if: github.ref_type == 'branch'
-        run: git push origin "$SPLIT:refs/heads/upm"
-
-      - name: Créer le tag upm/vX.Y.Z
-        if: github.ref_type == 'tag'
         run: |
-          git tag -a "upm/${GITHUB_REF_NAME}" "$SPLIT" -m "Version ${GITHUB_REF_NAME#v} (branche upm)"
-          git push origin "refs/tags/upm/${GITHUB_REF_NAME}"
+          SPLIT=$(git subtree split --prefix="$PKG" HEAD)
+          git push origin "$SPLIT:refs/heads/upm"
+
+      - name: Créer les tags upm/vX.Y.Z manquants
+        run: |
+          for TAG in $(git tag --list 'v*'); do
+            if git rev-parse -q --verify "refs/tags/upm/$TAG" > /dev/null; then
+              continue
+            fi
+            SPLIT=$(git subtree split --prefix="$PKG" "$TAG^{commit}")
+            git tag -a "upm/$TAG" "$SPLIT" -m "Version ${TAG#v} (branche upm)"
+            git push origin "refs/tags/upm/$TAG"
+            echo "Tag créé : upm/$TAG"
+          done

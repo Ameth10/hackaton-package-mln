@@ -1,16 +1,16 @@
-# --- Dossiers générés par Unity (recréés automatiquement à l'ouverture) ---
-/[Ll]ibrary/
-/[Tt]emp/
-/[Oo]bj/
-/[Bb]uild/
-/[Bb]uilds/
-/[Ll]ogs/
-/[Uu]ser[Ss]ettings/
-/[Mm]emoryCaptures/
-/[Rr]ecordings/
+# --- Dossiers générés par Unity dans le projet HackatonPackage/ (recréés à l'ouverture) ---
+/HackatonPackage/[Ll]ibrary/
+/HackatonPackage/[Tt]emp/
+/HackatonPackage/[Oo]bj/
+/HackatonPackage/[Bb]uild/
+/HackatonPackage/[Bb]uilds/
+/HackatonPackage/[Ll]ogs/
+/HackatonPackage/[Uu]ser[Ss]ettings/
+/HackatonPackage/[Mm]emoryCaptures/
+/HackatonPackage/[Rr]ecordings/
 
 # Outils de l'Asset Store
-/[Aa]ssets/AssetStoreTools*
+/HackatonPackage/[Aa]ssets/AssetStoreTools*
 
 # --- Fichiers générés par les IDE (Visual Studio, Rider, VS Code) ---
 .vs/

@@ -16,5 +16,12 @@
 	"changelogUrl": "https://example.com/changelog.html",
 	"documentationUrl": "https://example.com/",
 	"licensesUrl": "https://example.com/licensing.html",
-	"hideInEditor": false
+	"hideInEditor": false,
+	"samples": [
+		{
+			"displayName": "Example Sample",
+			"description": "Scène de démonstration des feedbacks.",
+			"path": "Samples~/Example"
+		}
+	]
 }

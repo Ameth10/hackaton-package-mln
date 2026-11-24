@@ -33,3 +33,7 @@ Le sample est copié dans `Assets/Samples/MLN Feedbacks/`.
 | `Runtime/` | Code des feedbacks, utilisable en jeu |
 | `Editor/` | Code de l'éditeur (Inspector) |
 | `Samples~/` | Scène de démonstration, importable depuis le Package Manager |
+
+## Licence
+
+Licence MIT : libre d'utilisation, de modification et de partage, à condition de garder la mention de l'auteur. Voir [LICENSE.md](LICENSE.md).

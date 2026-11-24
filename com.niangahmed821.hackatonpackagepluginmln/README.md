@@ -2,37 +2,36 @@
 
 Package Unity de feedbacks : highlight de transforms, animation de matériaux, combinaison VFX et son.
 
-Compatible Unity 6 (6000.0) et versions suivantes.
+**Documentation complète (installation, scène de démo, utilisation) : [Documentation~/hackatonpackagepluginmln.md](Documentation~/hackatonpackagepluginmln.md)**
 
-## Installation
+## Installation rapide
 
-1. Dans Unity, ouvre **Window > Package Manager**.
-2. Clique sur **+ > Install package from git URL**.
-3. Colle cette URL puis clique sur **Install** :
+Dans Unity : **Window > Package Manager > + > Install package from git URL**, puis colle :
 
 ```
 https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln
 ```
 
-## Scène de démonstration (optionnelle)
-
-1. Dans le Package Manager, sélectionne **MLN Feedbacks**.
-2. Ouvre l'onglet **Samples**.
-3. Clique sur **Import** à côté de **Example Sample**.
-
-Le sample est copié dans `Assets/Samples/MLN Feedbacks/`.
-
-## Démarrage rapide
-
-*À compléter quand les feedbacks seront codés.*
+Compatible Unity 6 (6000.0) et versions suivantes.
 
 ## Contenu du package
 
-| Dossier | Contenu |
+| Élément | Rôle |
 |---|---|
+| `package.json` | Nom, version, description et sample du package |
 | `Runtime/` | Code des feedbacks, utilisable en jeu |
-| `Editor/` | Code de l'éditeur (Inspector) |
+| `Editor/` | Code de l'éditeur Unity (Inspector) |
 | `Samples~/` | Scène de démonstration, importable depuis le Package Manager |
+| `Documentation~/` | Documentation utilisateur |
+| `CHANGELOG.md` | Historique des versions |
+| `LICENSE.md` | Licence MIT |
+| `Third Party Notices.md` | Composants tiers utilisés (aucun) |
+
+Les dossiers terminés par `~` sont ignorés par Unity à l'import : ils ne sont pas compilés et n'encombrent pas le projet.
+
+## Modifier le package
+
+Le package se développe dans le projet Unity `HackatonPackage/` du [dépôt GitHub](https://github.com/Ameth10/hackaton-package-mln), qui l'utilise en local : toute modification est visible directement dans Unity. Le guide pour publier une nouvelle version est dans le README à la racine du dépôt.
 
 ## Licence
 

@@ -2,7 +2,7 @@
 
 **Un package Unity pour ajouter facilement des effets de « feedback » à un jeu** : un objet qui rebondit quand on le touche, qui clignote quand il prend un coup, une explosion avec son bruitage…
 
-> **État : en développement (version 0.3.0).** La structure du package est en place. Les feedbacks arrivent dans les prochaines versions.
+> **État : en développement (version 0.3.1).** La structure du package est en place. Les feedbacks arrivent dans les prochaines versions.
 
 <!-- Aperçu : ajouter ici un GIF de démonstration, par exemple ![Aperçu](Docs/images/apercu.gif) -->
 
@@ -66,6 +66,7 @@ https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hack
 
 | Version | À ajouter à la fin | Nouveautés |
 |---|---|---|
+| 0.3.1 | `#v0.3.1` | Documentation complète du package, nettoyage du modèle Unity |
 | 0.3.0 | `#v0.3.0` | Licence open source MIT |
 | 0.2.0 | `#v0.2.0` | Nom « MLN Feedbacks », compatible Unity 6000.0 et plus |
 | 0.1.0 | `#v0.1.0` | Première version : structure du package |
@@ -83,12 +84,14 @@ hackaton-package-mln/
 ├── HackatonPackage/   ← projet Unity qui sert à développer et tester le package
 └── com.niangahmed821.hackatonpackagepluginmln/   ← le package lui-même
     ├── package.json   ← nom, version et description du package
-    ├── README.md      ← documentation du package
+    ├── README.md      ← résumé du package
     ├── CHANGELOG.md   ← historique des versions
     ├── LICENSE.md     ← licence (livrée avec le package)
+    ├── Third Party Notices.md   ← composants tiers utilisés (aucun)
     ├── Runtime/       ← code des feedbacks, utilisé en jeu
     ├── Editor/        ← code de l'éditeur Unity (Inspector)
-    └── Samples~/      ← scène de démonstration, importable à la demande
+    ├── Samples~/      ← scène de démonstration, importable à la demande
+    └── Documentation~/   ← documentation complète du package
 ```
 
 **Où mettre quoi :**

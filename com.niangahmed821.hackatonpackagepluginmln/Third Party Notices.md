@@ -1,16 +1,5 @@
-This package contains third-party software components governed by the license(s) indicated below:
----------
+# Third Party Notices
 
-Component Name: [provide component name]
+Ce package n'utilise aucun composant tiers : tout le code est original et sous licence MIT (voir [LICENSE.md](LICENSE.md)).
 
-License Type: [Provide license type, i.e. "MIT", "Apache 2.0"]
-
-[Provide License Details]
-
----------
-Component Name: [provide component name]
-
-License Type: [Provide license type, i.e. "MIT", "Apache 2.0"]
-
-[Provide License Details]
-
+Si un composant tiers est ajouté un jour, il sera listé ici avec son nom, sa licence et le texte de cette licence.

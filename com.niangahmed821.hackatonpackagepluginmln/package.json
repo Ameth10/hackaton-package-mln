@@ -1,14 +1,14 @@
 {
 	"name": "com.niangahmed821.hackatonpackagepluginmln",
 	"displayName": "MLN Feedbacks",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"unity": "6000.0",
 	"description": "Package de feedbacks pour Unity :\n▪ Highlight de transforms (punch, shake, rebond)\n▪ Animation de matériaux (couleur, flash, émission)\n▪ Combinaison VFX et son\n\nLes effets se règlent dans l'Inspector et se déclenchent en une ligne de code.",
 	"author": {
 		"name": "Mohameth Lamine Niang",
 		"url": "https://github.com/Ameth10"
 	},
-	"documentationUrl": "https://github.com/Ameth10/hackaton-package-mln/blob/main/com.niangahmed821.hackatonpackagepluginmln/README.md",
+	"documentationUrl": "https://github.com/Ameth10/hackaton-package-mln/blob/main/com.niangahmed821.hackatonpackagepluginmln/Documentation~/hackatonpackagepluginmln.md",
 	"changelogUrl": "https://github.com/Ameth10/hackaton-package-mln/blob/main/com.niangahmed821.hackatonpackagepluginmln/CHANGELOG.md",
 	"license": "MIT",
 	"licensesUrl": "https://github.com/Ameth10/hackaton-package-mln/blob/main/com.niangahmed821.hackatonpackagepluginmln/LICENSE.md",

@@ -2,7 +2,7 @@
 
 **Un package Unity pour ajouter facilement des effets de « feedback » à un jeu** : un objet qui rebondit quand on le touche, qui clignote quand il prend un coup, une explosion avec son bruitage…
 
-> **État : en développement (version 0.3.1).** La structure du package est en place. Les feedbacks arrivent dans les prochaines versions.
+> **État : en développement (version 0.3.2).** La structure du package est en place. Les feedbacks arrivent dans les prochaines versions.
 
 <!-- Aperçu : ajouter ici un GIF de démonstration, par exemple ![Aperçu](Docs/images/apercu.gif) -->
 
@@ -45,10 +45,12 @@ Les démos jouables (`.exe` pour Windows) et les vidéos sont publiées dans la 
 3. Colle cette adresse, puis clique sur **Install** :
 
    ```
-   https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln
+   https://github.com/Ameth10/hackaton-package-mln.git#upm
    ```
 
 4. Le package **MLN Feedbacks** apparaît dans la liste : c'est installé.
+
+`#upm` désigne la branche **upm** du dépôt, qui contient uniquement le package. Autre adresse possible, qui donne le même résultat : `https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln`
 
 **Scène de démonstration (optionnelle) :** dans le Package Manager, sélectionne **MLN Feedbacks**, ouvre l'onglet **Samples** et clique sur **Import**.
 
@@ -56,29 +58,31 @@ Les démos jouables (`.exe` pour Windows) et les vidéos sont publiées dans la 
 
 Sans rien ajouter, l'adresse ci-dessus installe toujours **la dernière version**.
 
-Pour installer une version précise, ou revenir à une version précédente, ajoute `#` suivi du nom de la version à la fin de l'adresse, puis refais l'étape 3 de l'installation. Unity remplace la version installée, sans rien supprimer.
+Pour installer une version précise, ou revenir à une version précédente, remplace `#upm` par `#upm/` suivi du numéro de version, puis refais l'étape 3 de l'installation. Unity remplace la version installée, sans rien supprimer.
 
 Exemple pour la version 0.2.0 :
 
 ```
-https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln#v0.2.0
+https://github.com/Ameth10/hackaton-package-mln.git#upm/v0.2.0
 ```
 
-| Version | À ajouter à la fin | Nouveautés |
+| Version | Fin de l'adresse | Nouveautés |
 |---|---|---|
-| 0.3.1 | `#v0.3.1` | Documentation complète du package, nettoyage du modèle Unity |
-| 0.3.0 | `#v0.3.0` | Licence open source MIT |
-| 0.2.0 | `#v0.2.0` | Nom « MLN Feedbacks », compatible Unity 6000.0 et plus |
-| 0.1.0 | `#v0.1.0` | Première version : structure du package |
+| 0.3.2 | `#upm/v0.3.2` | Installation par la branche upm (adresse plus courte) |
+| 0.3.1 | `#upm/v0.3.1` | Documentation complète du package, nettoyage du modèle Unity |
+| 0.3.0 | `#upm/v0.3.0` | Licence open source MIT |
+| 0.2.0 | `#upm/v0.2.0` | Nom « MLN Feedbacks », compatible Unity 6000.0 et plus |
+| 0.1.0 | `#upm/v0.1.0` | Première version : structure du package |
 
 Le détail de chaque version est dans le [CHANGELOG](com.niangahmed821.hackatonpackagepluginmln/CHANGELOG.md).
 
 ## Organisation du dépôt
 
 ```
-hackaton-package-mln/
+hackaton-package-mln/        (branche main)
 ├── README.md          ← cette page
 ├── LICENSE.md         ← licence MIT
+├── .github/workflows/ ← mise à jour automatique de la branche upm
 ├── Docs/
 │   └── images/        ← captures et GIF affichés sur cette page
 ├── HackatonPackage/   ← projet Unity qui sert à développer et tester le package
@@ -93,6 +97,15 @@ hackaton-package-mln/
     ├── Samples~/      ← scène de démonstration, importable à la demande
     └── Documentation~/   ← documentation complète du package
 ```
+
+**Deux branches :**
+
+| Branche | Contenu | Pour qui |
+|---|---|---|
+| `main` | Tout le dépôt : projet Unity, package, docs | Les développeurs du package |
+| `upm` | Uniquement le package, à la racine | Unity, pour l'installation (`#upm`) |
+
+La branche `upm` est **mise à jour automatiquement** par GitHub Actions à chaque push sur `main` : on ne la modifie jamais à la main.
 
 **Où mettre quoi :**
 
@@ -115,7 +128,8 @@ Le projet utilise le package en local : toute modification du package est visibl
 3. Ajoute une ligne au tableau « Changer de version » de cette page.
 4. Fais le commit, puis le tag : `git tag -a v0.4.0 -m "Version 0.4.0"`.
 5. Pousse les deux : `git push origin main v0.4.0`.
-6. Si besoin, crée une Release sur GitHub et joins-y le `.zip` de la démo.
+6. C'est tout : GitHub Actions met à jour la branche `upm` et crée le tag `upm/v0.4.0` (onglet **Actions** du dépôt pour vérifier).
+7. Si besoin, crée une Release sur GitHub et joins-y le `.zip` de la démo.
 
 ## Licence
 

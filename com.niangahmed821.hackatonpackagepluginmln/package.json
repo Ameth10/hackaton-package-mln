@@ -1,7 +1,7 @@
 {
 	"name": "com.niangahmed821.hackatonpackagepluginmln",
 	"displayName": "MLN Feedbacks",
-	"version": "0.3.1",
+	"version": "0.3.2",
 	"unity": "6000.0",
 	"description": "Package de feedbacks pour Unity :\n▪ Highlight de transforms (punch, shake, rebond)\n▪ Animation de matériaux (couleur, flash, émission)\n▪ Combinaison VFX et son\n\nLes effets se règlent dans l'Inspector et se déclenchent en une ligne de code.",
 	"author": {

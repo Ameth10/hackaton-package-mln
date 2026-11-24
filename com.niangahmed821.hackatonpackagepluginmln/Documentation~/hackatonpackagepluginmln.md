@@ -41,17 +41,19 @@ Les effets se règlent dans l'Inspector et se déclenchent en une ligne de code.
 3. Colle cette adresse, puis clique sur **Install** :
 
    ```
-   https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln
+   https://github.com/Ameth10/hackaton-package-mln.git#upm
    ```
 
 4. Le package **MLN Feedbacks** apparaît dans la liste : c'est installé.
 
+Autre adresse possible, qui donne le même résultat : `https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln`
+
 ## Changer de version
 
-L'adresse ci-dessus installe toujours la dernière version. Pour installer une version précise, ou revenir à une version précédente, ajoute `#` suivi du nom de la version à la fin de l'adresse, puis refais l'étape 3 de l'installation :
+L'adresse ci-dessus installe toujours la dernière version. Pour installer une version précise, ou revenir à une version précédente, remplace `#upm` par `#upm/` suivi du numéro de version, puis refais l'étape 3 de l'installation :
 
 ```
-https://github.com/Ameth10/hackaton-package-mln.git?path=/com.niangahmed821.hackatonpackagepluginmln#v0.3.1
+https://github.com/Ameth10/hackaton-package-mln.git#upm/v0.3.2
 ```
 
 Les versions disponibles et leurs nouveautés sont listées dans le [CHANGELOG](../CHANGELOG.md).
